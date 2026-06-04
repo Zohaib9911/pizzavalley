@@ -90,10 +90,7 @@ export default function CategoriesSection() {
           cursor: pointer;
           transition: transform .38s cubic-bezier(.22,1,.36,1),
                       box-shadow  .38s ease;
-        }
-        .cat-card:hover {
-          transform: translateY(-9px) scale(1.025);
-          box-shadow: 0 26px 60px rgba(0,0,0,.46);
+          -webkit-tap-highlight-color: transparent;
         }
 
         /* floating product image */
@@ -101,24 +98,15 @@ export default function CategoriesSection() {
           animation: pv-float 3.6s ease-in-out infinite;
           will-change: transform;
         }
-        .cat-card:hover .cat-img {
-          animation-play-state: paused;
-          transition: transform .4s ease;
-          transform: translateY(-11px) scale(1.07);
-        }
 
-        /* shimmer on hover */
-        /* background words: hidden by default, reveal on hover */
+        /* background words: hidden by default */
         .cat-words-wrap {
           opacity: 0;
           transform: translateY(28px);
           transition: opacity 0.45s ease, transform 0.5s cubic-bezier(.22,1,.36,1);
         }
-        .cat-card:hover .cat-words-wrap {
-          opacity: 1;
-          transform: translateY(0);
-        }
 
+        /* shimmer layer */
         .cat-card::after {
           content: '';
           position: absolute;
@@ -133,18 +121,55 @@ export default function CategoriesSection() {
           pointer-events: none;
           z-index: 20;
         }
-        .cat-card:hover::after {
-          animation: pv-shimmer .65s cubic-bezier(.22,1,.36,1) forwards;
-        }
 
         /* arrow button */
         .cat-arrow {
           transform: rotate(-45deg);
           transition: transform .3s ease, background .3s;
         }
-        .cat-card:hover .cat-arrow {
-          transform: rotate(0deg);
-          background: #6b1414 !important;
+
+        /* ── Desktop hover (true pointer devices only) ── */
+        @media (hover: hover) and (pointer: fine) {
+          .cat-card:hover {
+            transform: translateY(-9px) scale(1.025);
+            box-shadow: 0 26px 60px rgba(0,0,0,.46);
+          }
+          .cat-card:hover .cat-img {
+            animation-play-state: paused;
+            transition: transform .4s ease;
+            transform: translateY(-11px) scale(1.07);
+          }
+          .cat-card:hover .cat-words-wrap {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          .cat-card:hover::after {
+            animation: pv-shimmer .65s cubic-bezier(.22,1,.36,1) forwards;
+          }
+          .cat-card:hover .cat-arrow {
+            transform: rotate(0deg);
+            background: #6b1414 !important;
+          }
+        }
+
+        /* ── Mobile / touch devices — show on press ── */
+        @media (hover: none) {
+          .cat-card:active {
+            transform: scale(0.97);
+            box-shadow: 0 14px 40px rgba(0,0,0,.38);
+          }
+          .cat-card:active .cat-words-wrap {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          .cat-card:active .cat-img {
+            animation-play-state: paused;
+            transform: scale(1.05);
+          }
+          .cat-card:active .cat-arrow {
+            transform: rotate(0deg);
+            background: #6b1414 !important;
+          }
         }
       `}</style>
 
