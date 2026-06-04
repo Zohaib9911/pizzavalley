@@ -1,0 +1,18 @@
+export const categories = [
+  { name: 'Regular Pizza',    slug: 'regular-pizza',    image: '/images/Categories/Regular Pizza.png' },
+  { name: 'Special Pizza',    slug: 'special-pizza',    image: '/images/Categories/Zpecial Pizza.png' },
+  { name: 'Sandwich',         slug: 'sandwich',         image: '/images/Categories/Sandwich.png' },
+  { name: 'Wings',            slug: 'wings',            image: '/images/Categories/Wings.png' },
+  { name: 'Fries',            slug: 'fries',            image: '/images/Categories/Fries.png' },
+  { name: 'Burger',           slug: 'burger',           image: '/images/Categories/Burger.png' },
+  { name: 'Roll',             slug: 'roll',             image: '/images/Categories/Roll.png' },
+  { name: 'Wraps',            slug: 'wraps',            image: '/images/Categories/Wraps.png' },
+  { name: 'Pasta',            slug: 'pasta',            image: '/images/Categories/Pasta.png' },
+  { name: 'Sharwarma',        slug: 'sharwarma',        image: '/images/Categories/Sharwarma.png' },
+  { name: 'Fast Food Deals',  slug: 'fast-food-deals',  image: '/images/Categories/Fast Food Deals.png' },
+  { name: 'Pizza Deals',      slug: 'pizza-deals',      image: '/images/Categories/Pizza Deals.png' },
+  { name: 'Cakes',            slug: 'cakes',            image: '/images/Categories/Cakes.png' },
+  { name: 'Customized Cakes', slug: 'customized-cakes', image: '/images/Categories/Customized Cakes.png' },
+  { name: 'Pastries',         slug: 'pastries',         image: '/images/Categories/Pastries.png' },
+  { name: 'Special Biscuits', slug: 'special-biscuits', image: '/images/Categories/Special Biscuits.png' },
+];
